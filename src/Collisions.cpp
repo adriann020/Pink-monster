@@ -1,7 +1,7 @@
 #include "headers/GameManager.h"
 
 // Collisions and score increment between character and coins (Collision used in Gameplay.cpp too for the rest)
-void GameManager::AllCollisionsAndScore() { 
+void GameManager::AllCollisionsAndScore() {
 
     // Coins-Char
     if(Collision(this->coordinates->coin0Rect, this->coordinates->destRect) == 1){
@@ -16,7 +16,8 @@ void GameManager::AllCollisionsAndScore() {
         SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
     
-    }else if (Collision(this->coordinates->coin1Rect, this->coordinates->destRect) == 1){
+    }
+    if (Collision(this->coordinates->coin1Rect, this->coordinates->destRect) == 1){
         this->score->forScore(); // Score increment 
         updateScore(); // Updates the score text
 
@@ -28,7 +29,8 @@ void GameManager::AllCollisionsAndScore() {
         SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data 
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
 
-    }else if (Collision(this->coordinates->coin2Rect, this->coordinates->destRect) == 1){
+    }
+    if (Collision(this->coordinates->coin2Rect, this->coordinates->destRect) == 1){
         this->score->forScore(); // Score increment 
         updateScore(); // Updates the score text
 
@@ -40,7 +42,8 @@ void GameManager::AllCollisionsAndScore() {
         SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
 
-    }else if (Collision(this->coordinates->coin3Rect, this->coordinates->destRect) == 1){
+    }
+    if (Collision(this->coordinates->coin3Rect, this->coordinates->destRect) == 1){
         this->score->forScore(); // Score increment 
         updateScore(); // Updates the score text
 
@@ -52,7 +55,8 @@ void GameManager::AllCollisionsAndScore() {
         SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
 
-    }else if (Collision(this->coordinates->coin4Rect, this->coordinates->destRect) == 1){
+    }
+    if (Collision(this->coordinates->coin4Rect, this->coordinates->destRect) == 1){
         this->score->forScore(); // Score increment 
         updateScore(); // Updates the score text
 
@@ -64,7 +68,8 @@ void GameManager::AllCollisionsAndScore() {
         SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
 
-    }else if (Collision(this->coordinates->coin5Rect, this->coordinates->destRect) == 1){
+    }
+    if (Collision(this->coordinates->coin5Rect, this->coordinates->destRect) == 1){
         this->score->forScore(); // Score increment 
         updateScore(); // Updates the score text
 
@@ -82,28 +87,31 @@ void GameManager::AllCollisionsAndScore() {
 
         this->coordinates->coin0Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin0Rect.y = rand() % (HEIGHT-100);
-
-    }else if(Collision(this->coordinates->coin1Rect, this->coordinates->wall1Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin1Rect, this->coordinates->wall1Rect) == 1){
 
         this->coordinates->coin1Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin1Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin2Rect, this->coordinates->wall1Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin2Rect, this->coordinates->wall1Rect) == 1){
 
         this->coordinates->coin2Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin2Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin3Rect, this->coordinates->wall1Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin3Rect, this->coordinates->wall1Rect) == 1){
 
         this->coordinates->coin3Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin3Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin4Rect, this->coordinates->wall1Rect) == 1){
+    }if(Collision(this->coordinates->coin4Rect, this->coordinates->wall1Rect) == 1){
 
         this->coordinates->coin4Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin4Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin5Rect, this->coordinates->wall1Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin5Rect, this->coordinates->wall1Rect) == 1){
 
         this->coordinates->coin5Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin5Rect.y = rand() % (HEIGHT-100);
@@ -116,27 +124,32 @@ void GameManager::AllCollisionsAndScore() {
         this->coordinates->coin0Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin0Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin1Rect, this->coordinates->wall2Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin1Rect, this->coordinates->wall2Rect) == 1){
 
         this->coordinates->coin1Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin1Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin2Rect, this->coordinates->wall2Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin2Rect, this->coordinates->wall2Rect) == 1){
 
         this->coordinates->coin2Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin2Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin3Rect, this->coordinates->wall2Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin3Rect, this->coordinates->wall2Rect) == 1){
 
         this->coordinates->coin3Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin3Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin4Rect, this->coordinates->wall2Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin4Rect, this->coordinates->wall2Rect) == 1){
 
         this->coordinates->coin4Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin4Rect.y = rand() % (HEIGHT-100);
 
-    }else if(Collision(this->coordinates->coin5Rect, this->coordinates->wall2Rect) == 1){
+    }
+    if(Collision(this->coordinates->coin5Rect, this->coordinates->wall2Rect) == 1){
 
         this->coordinates->coin5Rect.x = rand() % (WIDTH-100); 
         this->coordinates->coin5Rect.y = rand() % (HEIGHT-100);
