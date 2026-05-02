@@ -123,7 +123,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         InputState *inputState = new InputState; 
         //For coordinates
         Coordinates *coordinates = new Coordinates;
-        //For textures , surfaces , text
+        //For textures, surfaces, text
         InitTextures *init_texture = new InitTextures;
         //For sounds
         InitSounds *init_sound = new InitSounds;
