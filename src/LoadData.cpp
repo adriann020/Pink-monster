@@ -72,6 +72,7 @@ SDL_Surface* GameManager::LoadSurfaceFromPak( Pak *pak,  const std::string& path
     if(!surface) {
         file << "[ERROR] SDL_LoadBMP_IO failed: " << SDL_GetError() << std::endl;
         file.close();
+        SDL_CloseIO(io); 
         return nullptr;
     }
 
