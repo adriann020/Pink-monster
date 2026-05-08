@@ -8,6 +8,14 @@
 #include "../pak.h"
 #include <SDL3/SDL.h>
 
+// WINDOW_WIDTH_&_HEIGHT
+#define WIDTH 1280
+#define HEIGHT 800
+
+// --------- Aliases ---------
+using Surface = SDL_Surface; // For surfaces
+using Texture = SDL_Texture; // For textures
+
 /*
  *GameManager class is responsible for managing the game state, rendering, and logic. 
  *It handles the main game loop, including rendering the character, NPCs, coins, and map,
@@ -16,14 +24,6 @@
  *and handles music playback for the menu. 
  *Additionally, it includes functions for loading assets from a pak file and updating the score display. 
  */
-#define WIDTH 1280
-#define HEIGHT 800
-
-// --------- Aliases ---------
-using Surface = SDL_Surface; // For surfaces
-using Texture = SDL_Texture; // For textures
-
-
 class GameManager : public AnimationState, public Text, public ClientFixes {
 
     public:     
