@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <fstream>
 #include "GameTypes.h"
 #include "Score.h"
@@ -6,6 +7,17 @@
 #include "../Init_sounds.h"
 #include "../pak.h"
 #include <SDL3/SDL.h>
+
+/*
+ *GameManager class is responsible for managing the game state, rendering, and logic. 
+ *It handles the main game loop, including rendering the character, NPCs, coins, and map,
+ *as well as processing user input and updating the game state based on collisions and score. 
+ *The class also manages the initialization and cleanup of SDL resources, such as the window and renderer, 
+ *and handles music playback for the menu. 
+ *Additionally, it includes functions for loading assets from a pak file and updating the score display. 
+ */
+#define WIDTH 1280
+#define HEIGHT 800
 
 // --------- Aliases ---------
 using Surface = SDL_Surface; // For surfaces
@@ -56,7 +68,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
 
         void MovementChar(); // Movement char
         void MoveNPC(); // Move the NPC (rendernpc inside)
-        void AllCollisionsAndScore(); // Update score and collisions
+        void AllCollisionsAndScore(); // Update score and collisions 
      
         // End
         void EndGame(){
@@ -95,7 +107,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         void MoveTextContinue();
 
         //Pak
-        SDL_Surface* LoadSurfaceFromPak( Pak *pak,  const std::string& path);
+        SDL_Surface* LoadSurfaceFromPak( Pak *pak,  const std::string& path);    
 
     private:   
 
@@ -122,14 +134,11 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         InputState *inputState = new InputState; 
         //For coordinates
         Coordinates *coordinates = new Coordinates;
-        //For textures, surfaces, text
+        //For textures , surfaces , text
         InitTextures *init_texture = new InitTextures;
         //For sounds
         InitSounds *init_sound = new InitSounds;
 
-
-        int WIDTH = 1280;
-        int HEIGHT = 800;
         int showscore;   
         std::ofstream window_closed; // ClearWindow 
         void deleteObjects();
